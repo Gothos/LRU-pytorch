@@ -6,7 +6,8 @@ import torch.nn.functional as F
 class LRU(nn.Module):
     def __init__(self,in_features,out_features,state_features, rmin=0, rmax=1,max_phase=6.283):
         super().__init__()
-        self.D=nn.Parameter(torch.randn([in_features,out_features])/math.sqrt(in_features))
+        self.out_features=out_features
+        self.D=nn.Parameter(torch.randn([out_features,in_features])/math.sqrt(in_features))
         u1=torch.rand(state_features)
         u2=torch.rand(state_features)
         self.nu_log= nn.Parameter(torch.log(-0.5*torch.log(u1*(rmax+rmin)*(rmax-rmin) + rmin**2)))
@@ -32,9 +33,9 @@ class LRU(nn.Module):
         gammas=gammas.to(self.state.device)
         #Handle input of (Batches,Seq_length, Input size)
         if input.dim()==3:
-            output=torch.empty_like(input)
+            output=torch.empty([input.shape[0],input.shape[1],self.out_features])
             for i,batch in enumerate(input):
-                out_seq=torch.empty_like(batch)
+                out_seq=torch.empty(input.shape[1],self.out_features)
                 for j,step in enumerate(batch):
                     self.state=(Lambda@self.state + gammas* self.B@step.to(dtype= self.B.dtype))
                     out_step= (self.C@self.state).real + self.D@step
