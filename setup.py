@@ -5,15 +5,14 @@ setup(
   packages = ['LRU-pytorch'],  
   version = '0.1',     
   license='MIT',       
-  description = 'TYPE YOUR DESCRIPTION HERE',  
+  description = 'Linear Recurrent Unit (LRU) - Pytorch',  
   author = 'Vishnu Jaddipal',                  
-  author_email = 'your.email@domain.com',     
-  url = 'https://github.com/user/reponame',   
+  author_email = 'zeus.vj2003@gmail.com',     
+  url = 'https://github.com/Gothos/LRU-pytorch',   
   download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',  
-  keywords = ['SOME', 'MEANINGFULL', 'KEYWORDS'],   
+  keywords = ['Artificial Intelligence', 'Deep Learning', 'Recurrent Neural Networks'],   
   install_requires=[            
-          'validators',
-          'beautifulsoup4',
+          'torch>=1.13'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',      
