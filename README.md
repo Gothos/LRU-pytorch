@@ -1,4 +1,4 @@
-# LRU-torch
+# LRU-pytorch
 An implementation of Linear Recurrent Units, by Deepmind, in Pytorch. LRUs are inspired by Deep State-Space Machines, particularly S4 and S5.
 
 # Notes:
