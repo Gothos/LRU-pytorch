@@ -4,7 +4,7 @@ An implementation of Linear Recurrent Units, by Deepmind, in Pytorch. LRUs are i
 # Notes:
 + Since Pytorch does not have associative scans as of now, the Pytorch implementation will very likely be slower than a JAX implementation.
 + Complex tensors are still in beta in Pytorch and do not fully support .half(), so using torch.float16 is not advised.
-+ Certain tensors are created on every forward pass.
++ Certain tensors are created on every forward pass. This is necessary only during training, and these tensors could be frozen to speed up inference.
 
 # Installation:
 ```
