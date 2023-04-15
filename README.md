@@ -27,11 +27,11 @@ lru= LRU(
 preds= lru(torch.randn([2,50,30])) # Get predictions
 ```
 # Parameters:
-''' in_features ''': int. The size of each timestep of the input sequence.
+```in_features```: int. The size of each timestep of the input sequence.
 
-''' out_features ''': int. The size of each timestep of the output sequence.
+```out_features```: int. The size of each timestep of the output sequence.
 
-''' state_features ''':int. The size of the internal state variable.
+```state_features```:int. The size of the internal state variable.
 
 # Paper:
 <a href='https://arxiv.org/abs/2303.06349'>Resurrecting Recurrent Neural Networks for Long Sequences</a>
