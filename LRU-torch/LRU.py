@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class LRU(nn.Module):
     def __init__(self,in_features,out_features,state_features, rmin=0, rmax=1,max_phase=6.283):
         super().__init__()
