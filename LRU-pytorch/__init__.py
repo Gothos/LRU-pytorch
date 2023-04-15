@@ -1,1 +1,1 @@
-from LRU-pytorch.LRU import LRU
+from LRU_pytorch.LRU import LRU
