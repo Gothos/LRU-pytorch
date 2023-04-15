@@ -45,7 +45,7 @@ class LRU(nn.Module):
                 output[i]=out_seq
         #Handle input of (Seq_length, Input size)
         if input.dim()==2:
-            output=torch.empty_like(input)
+            output=torch.empty([input.shape[0],self.out_features])
             for i,step in enumerate(input):
                 self.state=(Lambda@self.state + gammas* self.B@step.to(dtype= self.B.dtype))
                 out_step= (self.C@self.state).real + self.D@step
