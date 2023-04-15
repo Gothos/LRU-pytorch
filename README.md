@@ -17,7 +17,9 @@ from LRU_pytorch import LRU
 # Create a single Linear Recurrent Unit, that takes in inputs of size (batch_size, seq_length, 30) (or (seq_length, 30)), 
 # with internal state-space variable of size 10, and returns outputs of (batch_size, seq_length, 50) (or (seq_length, 50)).
 
-LRU=(30,50,10) 
+lru= LRU(30,50,10)
+
+preds= lru(torch.randn([2,50,30])) # Get predictions
 ```
 
 
