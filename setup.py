@@ -9,7 +9,7 @@ setup(
   author = 'Vishnu Jaddipal',                  
   author_email = 'zeus.vj2003@gmail.com',     
   url = 'https://github.com/Gothos/LRU-pytorch',   
-  download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',  
+  download_url = 'https://github.com/Gothos/LRU-pytorch/archive/refs/tags/v0.1-alpha.tar.gz',  
   keywords = ['Artificial Intelligence', 'Deep Learning', 'Recurrent Neural Networks'],   
   install_requires=[            
           'torch>=1.13'
