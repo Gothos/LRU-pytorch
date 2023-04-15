@@ -2,14 +2,14 @@
 from distutils.core import setup
 setup(
   name = 'LRU-pytorch',         
-  packages = ['LRU-pytorch'],  
-  version = '0.1',     
+  packages = ['LRU_pytorch'],  
+  version = '0.1.1',     
   license='MIT',       
   description = 'Linear Recurrent Unit (LRU) - Pytorch',  
   author = 'Vishnu Jaddipal',                  
   author_email = 'zeus.vj2003@gmail.com',     
   url = 'https://github.com/Gothos/LRU-pytorch',   
-  download_url = 'https://github.com/Gothos/LRU-pytorch/archive/refs/tags/v0.1-alpha.tar.gz',  
+  download_url = 'https://github.com/Gothos/LRU-pytorch/archive/refs/tags/v0.1.1-alpha.tar.gz',  
   keywords = ['Artificial Intelligence', 'Deep Learning', 'Recurrent Neural Networks'],   
   install_requires=[            
           'torch>=1.13'
