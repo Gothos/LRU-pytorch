@@ -23,8 +23,8 @@ class LRU(nn.Module):
         self.C=nn.Parameter(torch.complex(C_re,C_im))
         self.state=torch.complex(torch.zeros(state_features),torch.zeros(state_features))
 
-    def forward(self, input):
-        self.state=self.state.to(self.B.device)
+    def forward(self, input,state=None):
+        self.state=self.state.to(self.B.device) if state==None else state
         Lambda_mod=torch.exp(-torch.exp(self.nu_log))
         Lambda_re=Lambda_mod*torch.cos(torch.exp(self.theta_log))
         Lambda_im=Lambda_mod*torch.sin(torch.exp(self.theta_log))
