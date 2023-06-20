@@ -32,7 +32,7 @@ class LRU(nn.Module):
         Lambda=Lambda.to(self.state.device)
         gammas=torch.exp(self.gamma_log).unsqueeze(-1).to(self.B.device)
         gammas=gammas.to(self.state.device)
-        output=torch.empty([i for i in input.shape] +[self.out_features],device=self.B.device)
+        output=torch.empty([i for i in input.shape[:-1]] +[self.out_features],device=self.B.device)
         #Handle input of (Batches,Seq_length, Input size)
         if input.dim()==3:
             for i,batch in enumerate(input):
