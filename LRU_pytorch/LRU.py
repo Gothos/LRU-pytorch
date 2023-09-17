@@ -38,7 +38,7 @@ class LRU(nn.Module):
             for i,batch in enumerate(input):
                 out_seq=torch.empty(input.shape[1],self.out_features)
                 for j,step in enumerate(batch):
-                    self.state=(Lambda@self.state + gammas* self.B@step.to(dtype= self.B.dtype))
+                    self.state=(Lambda*self.state + gammas* self.B@step.to(dtype= self.B.dtype))
                     out_step= (self.C@self.state).real + self.D@step
                     out_seq[j]=out_step
                 self.state=torch.complex(torch.zeros_like(self.state.real),torch.zeros_like(self.state.real))
@@ -46,7 +46,7 @@ class LRU(nn.Module):
         #Handle input of (Seq_length, Input size)
         if input.dim()==2:
             for i,step in enumerate(input):
-                self.state=(Lambda@self.state + gammas* self.B@step.to(dtype= self.B.dtype))
+                self.state=(Lambda*self.state + gammas* self.B@step.to(dtype= self.B.dtype))
                 out_step= (self.C@self.state).real + self.D@step
                 output[i]=out_step
             self.state=torch.complex(torch.zeros_like(self.state.real),torch.zeros_like(self.state.real))
